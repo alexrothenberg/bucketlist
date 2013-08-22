@@ -1,5 +1,8 @@
 BucketList::Application.routes.draw do
   resources :todos
+  namespace :api do
+    resources :todos
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
