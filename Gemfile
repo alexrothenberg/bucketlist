@@ -29,6 +29,7 @@ gem 'turbolinks'
 gem 'active_model_serializers'
 gem 'devise'
 gem 'haml'
+gem 'angular-rails-templates'
 
 group :test do
   gem 'rspec-rails'

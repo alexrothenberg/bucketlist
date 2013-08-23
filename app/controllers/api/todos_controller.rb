@@ -5,52 +5,49 @@ class Api::TodosController < ApplicationController
     render json: @todos
   end
 
-  # GET /todos/1
+  # # GET /todos/1
   def show
+    render json: todo
   end
 
-  # GET /todos/new
-  def new
-    @todo = Todo.new
-  end
+  # # POST /todos
+  # def create
+  #   @todo = Todo.new(todo_params)
 
-  # GET /todos/1/edit
-  def edit
-  end
+  #   if @todo.save
+  #     redirect_to @todo, notice: 'Todo was successfully created.'
+  #   else
+  #     render action: 'new'
+  #   end
+  # end
 
-  # POST /todos
-  def create
-    @todo = Todo.new(todo_params)
+  # # PATCH/PUT /todos/1
+  # def update
+  #   if @todo.update(todo_params)
+  #     redirect_to @todo, notice: 'Todo was successfully updated.'
+  #   else
+  #     render action: 'edit'
+  #   end
+  # end
 
-    if @todo.save
-      redirect_to @todo, notice: 'Todo was successfully created.'
-    else
-      render action: 'new'
-    end
-  end
-
-  # PATCH/PUT /todos/1
-  def update
-    if @todo.update(todo_params)
-      redirect_to @todo, notice: 'Todo was successfully updated.'
-    else
-      render action: 'edit'
-    end
-  end
-
-  # DELETE /todos/1
-  def destroy
-    @todo.destroy
-    redirect_to todos_url, notice: 'Todo was successfully destroyed.'
-  end
+  # # DELETE /todos/1
+  # def destroy
+  #   @todo.destroy
+  #   redirect_to todos_url, notice: 'Todo was successfully destroyed.'
+  # end
 
   private
     def todo
       @todo ||= Todo.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
-    def todo_params
-      params.require(:todo).permit(:title)
-    end
+  #   # Only allow a trusted parameter "white list" through.
+  #   def todo_params
+  #     params.require(:todo).permit(:title)
+  #   end
+
+  def default_serializer_options
+    { root: false }
+  end
+
 end
