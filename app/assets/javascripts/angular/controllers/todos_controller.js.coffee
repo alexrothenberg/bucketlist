@@ -20,3 +20,6 @@ angular.module('BucketList').controller 'ToDosController', ($scope, ToDo, $locat
   $scope.create = (todo)->
     alert("Created")
     $location.path("/todos")
+
+  $scope.updateMe = ->
+    console.log 'update me'

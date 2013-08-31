@@ -1,3 +1,39 @@
 // Place all the styles related to the todos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media (min-width: 899px) {
+  body {
+    width: auto;
+    margin: 0 0 0 300px;
+  }
+  #bucket-list-app {
+    width: 550px;
+    margin: 100px auto 40px auto;
+  }
+}
+
+#bucket-list-app {
+  padding-top: 8px;
+  background-color: rgb(132, 110, 100);
+
+  ul {
+    background-color: white;
+  }
+}
+
+ul.items  {
+  list-style: none;
+}
+
+.item {
+  div { float:      left; }
+  .rating   { margin-left: 0px;   width:20px; }
+  .title    { margin-left: 20px;  }
+  .endorsed { float:right }
+}
+.item:after {
+  content:'';
+  display:block;
+  clear: both;
+}

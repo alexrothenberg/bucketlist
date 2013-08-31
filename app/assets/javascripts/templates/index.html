@@ -1,5 +1,9 @@
-<ul>
+<ul class="items">
   <li ng-repeat="todo in todos">
-    <a ng-click="edit(todo)">{{ todo.title }}</a>
+    <div class="item">
+      <rating rating-value="todo.rating" on-rating-changed="update(todo)">></rating>
+      <div class="title" ng-click="edit(todo)"><a>{{ todo.title }}</a></div>
+      <div class="endorsed">{{ todo.endorsed }}</div>
+    </div>
   </li>
 </ul>

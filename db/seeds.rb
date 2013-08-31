@@ -7,5 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Todo.delete_all
-Todo.create(title: 'Bike to Turkey Landing')
-Todo.create(title: "Hike Tuckerman's Ravine")
+Todo.create(title: "Hike Tuckerman's Ravine", rating:1, endorsed: true)
+Todo.create(title: 'Bike to Turkey Landing',  rating:3, endorsed: true)
+Todo.create(title: "Go skydiving")

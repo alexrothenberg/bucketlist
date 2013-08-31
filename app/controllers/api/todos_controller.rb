@@ -1,7 +1,7 @@
 class Api::TodosController < ApplicationController
   # GET /todos
   def index
-    @todos = Todo.all
+    @todos = Todo.by_rating
     render json: @todos
   end
 
