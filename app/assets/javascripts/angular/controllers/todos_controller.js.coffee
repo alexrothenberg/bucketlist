@@ -14,12 +14,11 @@ angular.module('BucketList').controller 'ToDosController', ($scope, ToDo, $locat
     $location.path("/todos")
 
   $scope.update =  (todo)->
-    alert("Updated")
+    # alert("Updated")
+    todo.$update()
     $location.path("/todos")
 
   $scope.create = (todo)->
     alert("Created")
     $location.path("/todos")
 
-  $scope.updateMe = ->
-    console.log 'update me'

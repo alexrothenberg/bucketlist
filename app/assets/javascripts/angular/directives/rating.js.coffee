@@ -13,10 +13,10 @@ angular.module('BucketList').directive 'rating', ->
     onRatingChanged: '&'
   link: (scope, elem, attrs)->
     scope.up = ->
-      ratingValue = ratingValue + 1
+      scope.ratingValue += 1
       scope.onRatingChanged()
     scope.down = ->
-      ratingValue = ratingValue - 1
+      scope.ratingValue -= 1
       scope.onRatingChanged()
 
     scope.stars = []

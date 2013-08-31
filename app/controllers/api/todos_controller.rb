@@ -1,4 +1,6 @@
 class Api::TodosController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   # GET /todos
   def index
     @todos = Todo.by_rating
@@ -22,13 +24,13 @@ class Api::TodosController < ApplicationController
   # end
 
   # # PATCH/PUT /todos/1
-  # def update
-  #   if @todo.update(todo_params)
-  #     redirect_to @todo, notice: 'Todo was successfully updated.'
-  #   else
-  #     render action: 'edit'
-  #   end
-  # end
+  def update
+    if todo.update(todo_params)
+      render json: todo
+    else
+      render json: todo, status: 500
+    end
+  end
 
   # # DELETE /todos/1
   # def destroy
@@ -41,10 +43,10 @@ class Api::TodosController < ApplicationController
       @todo ||= Todo.find(params[:id])
     end
 
-  #   # Only allow a trusted parameter "white list" through.
-  #   def todo_params
-  #     params.require(:todo).permit(:title)
-  #   end
+    # Only allow a trusted parameter "white list" through.
+    def todo_params
+      params.require(:todo).permit(:title, :rating, :endorsed)
+    end
 
   def default_serializer_options
     { root: false }
