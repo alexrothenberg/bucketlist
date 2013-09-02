@@ -5,7 +5,7 @@
 @media (min-width: 899px) {
   body {
     width: auto;
-    margin: 0 0 0 300px;
+    margin: 0 0 0 0px;
   }
   #bucket-list-app {
     width: 550px;
@@ -22,18 +22,55 @@
   }
 }
 
-ul.items  {
+ul#items  {
   list-style: none;
+  padding: 5px 5px 5px 5px;
+}
+
+#container {
+  position:relative;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+}
+
+#items:before {
+  content: '';
+  border-left: 1px solid #f5d6d6;
+  border-right: 1px solid #f5d6d6;
+  width: 2px;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  height: 100%;
 }
 
 .item {
+  border-bottom: 1px dotted #ccc;
   div { float:      left; }
-  .rating   { margin-left: 0px;   width:20px; }
-  .title    { margin-left: 20px;  }
-  .endorsed { float:right }
+  .rating   { margin-left: 0px;   width:25px; }
+  .title    { margin-left: 25px;  }
+  .endorse  { float:right; }
 }
 .item:after {
   content:'';
   display:block;
   clear: both;
+}
+
+.rating a {
+  font-size: large;
+  color: green;
+}
+
+.unendorsed {
+  background-image: url('/assets/huh2.png');
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}
+
+.endorsed {
+  background-image: url('/assets/mike_ok.png');
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
 }

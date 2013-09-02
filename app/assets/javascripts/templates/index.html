@@ -1,9 +1,11 @@
-<ul class="items">
-  <li ng-repeat="todo in todos">
-    <div class="item">
-      <rating rating-value="todo.rating" on-rating-changed="update(todo)">></rating>
-      <div class="title" ng-click="edit(todo)"><a>{{ todo.title }}</a></div>
-      <div class="endorsed">{{ todo.endorsed }}</div>
-    </div>
-  </li>
-</ul>
+<div id="container">
+  <ul id="items">
+    <li ng-repeat="todo in todos | orderBy:rating">
+      <div class="item">
+        <rating rating-value="todo.rating" on-rating-changed="voteFor(todo)">></rating>
+        <div class="title" ng-click="edit(todo)"><a>{{ todo.title }}</a></div>
+        <div class="endorse" ng-class="{endorsed:todo.endorsed, unendorsed:!todo.endorsed}"></div>
+      </div>
+    </li>
+  </ul>
+</div>

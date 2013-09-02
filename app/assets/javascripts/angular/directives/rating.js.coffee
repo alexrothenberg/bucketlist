@@ -3,13 +3,11 @@ angular.module('BucketList').directive 'rating', ->
   # restrict: 'A'
   template: """
     <div class="rating">
-      <div ng-click="up()">UP</div>
-      {{ratingValue}}
-      <div ng-click="down()">Down</div>
+      <a ng-click="up()">\u25B4</a>
     </div>
     """
   scope:
-    ratingValue: '='
+    ratingValue: '&'
     onRatingChanged: '&'
   link: (scope, elem, attrs)->
     scope.up = ->
