@@ -17,14 +17,31 @@
   padding-top: 8px;
   background-color: rgb(132, 110, 100);
 
-  ul {
+  table {
     background-color: white;
   }
 }
 
-ul#items  {
+#items  {
   list-style: none;
   padding: 5px 5px 5px 5px;
+
+  tr:first {
+    background-color: rgb(132, 110, 100);
+  }
+  tr {
+    border-bottom: 1px dotted #ccc;
+  }
+  tr {
+    border-bottom: solid 1px black;
+  }
+  td.voted { width: 20px; }
+  td.title { width: 100%; }
+  td.endorsement { width: 100px; }
+}
+
+#new-title {
+  width: 100%;
 }
 
 #list-container {
@@ -39,7 +56,7 @@ ul#items  {
   width: 2px;
   position: absolute;
   top: 0;
-  left: 40px;
+  left: 25px;
   height: 100%;
 }
 

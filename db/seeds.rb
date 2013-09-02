@@ -10,3 +10,4 @@ Todo.delete_all
 Todo.create(title: "Hike Tuckerman's Ravine", rating:1, endorsed: true)
 Todo.create(title: 'Bike to Turkey Landing',  rating:3, endorsed: true)
 Todo.create(title: "Go skydiving")
+Todo.create(title: "Eat at Good 'n Plenty",  rating:3, endorsed: true)

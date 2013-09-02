@@ -1,16 +1,24 @@
 <div id="list-container">
-  <ul id="items">
-    <li>
-      <form ng-submit="addItem()">
-        <input type="text" placeholder="What does Mike want to achieve?" ng-model="newItem">
-      </form>
-    </li>
-    <li ng-repeat="todo in todos | orderBy:rating">
-      <div class="item">
+  <table id="items">
+    <tr>
+      <td class="voted"></td>
+      <td class="title">
+        <form ng-submit="addItem()">
+          <input id="new-title" type="text" placeholder="What does Mike want to achieve?" ng-model="newItem">
+        </form>
+      </td>
+      <th class="endorse"></th>
+    </tr>
+    <tr class="item" ng-repeat="todo in todos | orderBy:rating">
+      <td class="voted">
         <rating rating-value="todo.rating" on-rating-changed="voteFor(todo)">></rating>
-        <div class="title" ng-click="edit(todo)"><a>{{ todo.title }}</a></div>
+      </td>
+      <td class="title">
+        <a ng-click="edit(todo)">{{ todo.title }}</a>
+      </td>
+      <td>
         <div class="endorse" ng-class="{endorsed:todo.endorsed, unendorsed:!todo.endorsed}"></div>
-      </div>
-    </li>
-  </ul>
+      </td>
+    </tr>
+  </table>
 </div>
