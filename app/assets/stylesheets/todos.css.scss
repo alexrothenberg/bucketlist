@@ -7,7 +7,7 @@
     width: auto;
     margin: 0 0 0 0px;
   }
-  #bucket-list-app {
+  #container {
     width: 550px;
     margin: 100px auto 40px auto;
   }
@@ -27,7 +27,7 @@ ul#items  {
   padding: 5px 5px 5px 5px;
 }
 
-#container {
+#list-container {
   position:relative;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
 }

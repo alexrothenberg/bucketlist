@@ -1,5 +1,10 @@
-<div id="container">
+<div id="list-container">
   <ul id="items">
+    <li>
+      <form ng-submit="addItem()">
+        <input type="text" placeholder="What does Mike want to achieve?" ng-model="newItem">
+      </form>
+    </li>
     <li ng-repeat="todo in todos | orderBy:rating">
       <div class="item">
         <rating rating-value="todo.rating" on-rating-changed="voteFor(todo)">></rating>

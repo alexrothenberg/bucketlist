@@ -25,3 +25,9 @@ angular.module('BucketList').controller 'ToDosController', ($scope, ToDo, $locat
     todo.rating += 1
     $scope.update(todo)
 
+  $scope.addItem = ->
+    todo = new ToDo({ title: $scope.newToDo })
+    todo.$save()
+    $location.path("/todos")
+
+

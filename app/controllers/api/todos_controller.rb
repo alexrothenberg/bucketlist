@@ -12,16 +12,17 @@ class Api::TodosController < ApplicationController
     render json: todo
   end
 
-  # # POST /todos
-  # def create
-  #   @todo = Todo.new(todo_params)
+  # POST /todos
+  def create
+    todo_params = params.permit(:title, :rating, :endorsed)
+    @todo = Todo.new(todo_params)
 
-  #   if @todo.save
-  #     redirect_to @todo, notice: 'Todo was successfully created.'
-  #   else
-  #     render action: 'new'
-  #   end
-  # end
+    if @todo.save
+      render json: @todo
+    else
+      render json: todo, status: 500
+    end
+  end
 
   # # PATCH/PUT /todos/1
   def update
