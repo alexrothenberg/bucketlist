@@ -1,20 +1,21 @@
 angular.module('BucketList', ['ngResource', 'ngRoute', 'templates'])
 
-angular.module('BucketList').config(['$routeProvider', ($routeProvider) ->
-  $routeProvider.
-    when('/todos',
-      templateUrl: 'index.html',
-      controller:  'ToDosController'
-    ).when('/todos/new',
-      templateUrl: 'new.html',
-      controller:  'ToDosController'
-    ).when('/todos/:id/edit',
-      templateUrl: 'edit.html',
-      controller:  'ToDosController'
-    ).when('/todos/:id',
-      templateUrl: 'show.html',
-      controller:  'ToDosController'
-    ).otherwise(
-      redirectTo: '/todos'
-    )
-  ])
+angular.module('BucketList').config [
+  '$routeProvider', ($routeProvider) ->
+    $routeProvider.
+      when('/todos',
+        templateUrl: 'index.html',
+        controller:  'ToDosController'
+      ).when('/todos/new',
+        templateUrl: 'new.html',
+        controller:  'ToDosController'
+      ).when('/todos/:id/edit',
+        templateUrl: 'edit.html',
+        controller:  'ToDosController'
+      ).when('/todos/:id',
+        templateUrl: 'show.html',
+        controller:  'ToDosController'
+      ).otherwise(
+        redirectTo: '/todos'
+      )
+]
