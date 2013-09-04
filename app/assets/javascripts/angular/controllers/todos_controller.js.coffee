@@ -19,7 +19,8 @@ angular.module('BucketList').controller 'ToDosController', [
       $location.path("/todos")
 
     $scope.create = (todo)->
-      alert("Created")
+      todo.$save()
+      $scope.todos = ToDo.query()
       $location.path("/todos")
 
     $scope.voteFor = (todo)->
@@ -27,7 +28,6 @@ angular.module('BucketList').controller 'ToDosController', [
       $scope.update(todo)
 
     $scope.addItem = ->
-      todo = new ToDo({ title: $scope.newToDo })
-      todo.$save()
-      $location.path("/todos")
+      todo = new ToDo({ title: $scope.newItem })
+      $scope.create(todo)
 ]
