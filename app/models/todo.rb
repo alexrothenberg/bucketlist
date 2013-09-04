@@ -1,11 +1,12 @@
 class Todo < ActiveRecord::Base
   validates :title, presence: true
 
-  def self.by_rating
-    order 'rating DESC'
+  before_save :default_values
+  def default_values
+    self.rating ||= 0
   end
 
-  def rating
-    super || 0
+  def self.by_rating
+    order 'rating DESC'
   end
 end
