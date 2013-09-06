@@ -3,6 +3,10 @@ angular.module('BucketList').controller 'ToDosController', [
     $scope.todos = ToDo.query()
     $scope.todo = ToDo.get(id: $routeParams.id) if $routeParams.id?
 
+    $scope.endorse = (todo)->
+      $scope.bubbleText = "Are you Mike?"
+      $scope.bubbleShow = true
+
     $scope.new = ->
       $scope.todo = {}
       $location.path('/todos/new')

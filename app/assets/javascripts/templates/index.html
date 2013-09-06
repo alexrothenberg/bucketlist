@@ -17,7 +17,14 @@
         <a ng-click="edit(todo)">{{ todo.title }}</a>
       </td>
       <td>
-        <div class="endorse" ng-class="{endorsed:todo.endorsed, unendorsed:!todo.endorsed}"></div>
+        <div class="endorse"
+             ng-class="{endorsed:todo.endorsed, unendorsed:!todo.endorsed}"
+             ng-click="endorse(todo)">
+          <speech-bubble bubblew="306" bubbleh="430" bubblel="20" bubblet="30" tailh="80" taill="100"
+                         ng-show="bubbleShow">
+            {{ bubbleText }}
+          </speech-bubble>
+        </div>
       </td>
     </tr>
   </table>
